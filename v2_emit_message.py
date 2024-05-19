@@ -1,4 +1,6 @@
 """
+Name: Jake Rood
+Date: 05/19/2024
 
 Message sender / emitter 
 
@@ -8,7 +10,7 @@ It will execute and finish.
 You can change the message and run it again in the same terminal.
 
 Remember:
-- Use the up arrow to recall the last command executed in the terminal.
+- Use the up arrow or double exclamation points to recall the last command executed in the terminal.
 """
 
 # Import from Standard Library
@@ -33,6 +35,7 @@ def send_message(host: str, queue_name: str, message: str):
     This process runs and finishes.
 
     Parameters:
+        host (str): the name of the server's host
         queue_name (str): the name of the queue
         message (str): the message to be sent to the queue
 
@@ -66,4 +69,4 @@ def send_message(host: str, queue_name: str, message: str):
 # If this is the script we are running, then call some functions and execute code!
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    send_message("llllocalhost", "hello", "Hello World!")
+    send_message("localhost", "v2", "Go Bearcats!")

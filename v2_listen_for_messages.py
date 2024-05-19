@@ -1,4 +1,6 @@
 """
+Name: Jake Rood
+Date: 05/19/2024
 
 Message listener 
 
@@ -9,7 +11,7 @@ This terminal must be open and dedicated to this process.
 
 Remember:
 - Use Control + C to close a terminal and end the listening process.
-- Use the up arrow to recall the last command executed in the terminal.
+- Use the up arrow or double exclamation points to recall the last command executed in the terminal.
 """
 
 
@@ -51,7 +53,7 @@ def process_message(ch, method, properties, body):
 # define a main function to run the program
 # pass in the hostname as a string parameter if you like
 # if no argument is provided, set a default value to localhost
-def main(hn: str = "localhosttt"):
+def main(hn: str = "localhost"):
     """Main program entry point."""
 
     # when a statement can go wrong, use a try-except block
@@ -74,12 +76,12 @@ def main(hn: str = "localhosttt"):
         channel = connection.channel()
 
         # use the channel to declare a queue
-        channel.queue_declare(queue="hello")
+        channel.queue_declare(queue="v2")
 
         # use the channel to consume messages from the queue
         # on getting a message, execute the login in the callback function
         channel.basic_consume(
-            queue="hello", on_message_callback=process_message, auto_ack=True
+            queue="v2", on_message_callback=process_message, auto_ack=True
         )
 
         # print a message to the console for the user

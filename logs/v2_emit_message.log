@@ -1,0 +1,8 @@
+2024-05-19 16:08:49,214.v2_emit_message.INFO ==================================================
+2024-05-19 16:08:49,214.v2_emit_message.INFO Today is 2024-05-19 at 04:08 PM
+2024-05-19 16:08:49,214.v2_emit_message.INFO Running on: posix Darwin 20.6.0
+2024-05-19 16:08:49,214.v2_emit_message.INFO Python version:  3.11.4
+2024-05-19 16:08:49,215.v2_emit_message.INFO Python path: /Users/jakerood/streaming-03-rabbitmq/.venv
+2024-05-19 16:08:49,215.v2_emit_message.INFO Working dir: /Users/jakerood/streaming-03-rabbitmq
+2024-05-19 16:08:49,215.v2_emit_message.INFO ==================================================
+2024-05-19 16:08:49,228.v2_emit_message.INFO  [x] Sent Go Bearcats!
