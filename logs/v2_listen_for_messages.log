@@ -7,3 +7,5 @@
 2024-05-19 16:08:24,418.v2_listen_for_messages.INFO ==================================================
 2024-05-19 16:08:24,508.v2_listen_for_messages.INFO  [*] Waiting for messages. To exit press CTRL+C
 2024-05-19 16:08:49,230.v2_listen_for_messages.INFO Received: Go Bearcats!
+2024-05-19 16:13:54,272.v2_listen_for_messages.WARNING User interrupted the listening process.
+2024-05-19 16:13:54,273.v2_listen_for_messages.INFO Closing connection. Goodbye.
