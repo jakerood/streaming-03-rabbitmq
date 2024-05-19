@@ -1,11 +1,12 @@
 # streaming-03-rabbitmq
 
+Name: Jake Rood
+
+Date: 05-19-2024
+
 > Get started with RabbitMQ, a message broker, that enables multiple processes to communicate reliably through an intermediary.
 
-This project requires some free code - beyond that available in the Python Standard Library. To avoid messing up our local default Python installation, and any other Python projects we may have, we  create a local virtual environment to install and use these libraries.
-
-Think of a virtual environment as a safe sandbox. 
-We can install whatever we want in our sandbox, and it won't break other Python projects that may require different versions, etc. 
+This project requires some free code - beyond that available in the Python Standard Library. To avoid messing up our local default Python installation, and any other Python projects we may have, we create a local virtual environment to install and use these libraries.
 
 We use the built-in Python utility `venv` to create our virtual environment. 
 There are other options, but this is simplest and most common. 
@@ -22,7 +23,7 @@ We create the environment as a subfolder of this repo named .venv to keep it awa
 
 ## Before You Begin
 
-1. Fork this starter repo into your GitHub account.
+1. Fork this [starter repo](https://github.com/denisecase/streaming-03-rabbitmq) into your GitHub account.
 1. Clone your repo down to your machine.
 1. Explore your new project repo in VS Code on your local machine.
 
@@ -34,7 +35,7 @@ We will create a local Python virtual environment to isolate our project's third
 1. Use the built-in Python utility venv to create a new virtual environment named `.venv` in the current directory.
 
 ```shell
-python -m venv .venv
+python3 -m venv .venv
 ```
 
 Verify you get a new .venv directory in your project. 
@@ -42,10 +43,11 @@ We use .venv as the name to keep it away from our project files.
 
 ## Task 2. Activate the Virtual Environment
 
-In the same VS Code terminal window, activate the virtual environment.
+In the same VS Code terminal window, activate the virtual environment. On MacOS:
 
-- On Windows, run: `.venv\Scripts\activate`
-- On Linux/MacOS, run: `source .venv/bin/activate`
+```shell
+source .venv/bin/activate
+```
 
 Verify you see the virtual environment name (.venv) in your terminal prompt.
 
@@ -60,7 +62,9 @@ Use the pip utility to install the libraries listed in requirements.txt into our
 
 Make sure you can see the .venv name in your terminal prompt before running this command.
 
-`python -m pip install -r requirements.txt`
+```shell
+python3 -m pip install -r requirements.txt
+```
 
 ## Task 4. Verify Setup (OPTIONAL - ONLY WORK ON SOME CONFIGURATIONS)
 
@@ -69,15 +73,14 @@ These util files MAY be helpful to ensure you're setup correctly.
 You may have a different configuration and RabbitMQ may still work; the check looks in common places, but may not work for all installations. 
 They are meant to be helpful, but are not required.
 
-You can help by updating the code for other common configurations. 
-Just fork the current repo, add your change, and create a pull request (no other changes please) and I'll pull it back in. 
-
 ```shell
 python util_about.py
 python util_aboutenv.py
 python util_aboutrabbit.py
 pip list
 ```
+
+NOTE: This step was skipped for this project.
 
 ![verifying setup](./images/verifying.png)
 
@@ -93,7 +96,11 @@ Approach it like a puzzle and see what you can figure out.
 ## Task 6. Execute the Producer/Sender
 
 1. Read v1_emit_message.py (and the tutorial)
-1. Run the file. 
+1. Run the file.
+
+```shell
+python3 v1_emit_message.py
+```
 
 It will run, emit a message to the named RabbitMQ queue, and finish.
 We can execute additional commands in the terminal as soon as it finishes. 
@@ -103,22 +110,29 @@ We can execute additional commands in the terminal as soon as it finishes.
 1. Read v1_listen_for_messages.py (and the tutorial)
 1. Run the file.
 
-You'll need to fix an error in the program to get it to run.
-Once it runs successfully, will it terminate on its own? How do you know? 
+```shell
+python3 v1_listen_for_messages.py
+```
+
+Once it runs successfully, will it terminate on its own? How do you know?
+
+- No, you must interrupt the listening process by pressing `CTRL+C`
+
 As long as the process is running, we cannot use this terminal for other commands. 
 
 ## Task 8. Open a New Terminal / Emit More Messages
 
 1. Open a new terminal window.
 1. Use this new window to run emit_message.py again.
-1. Watch the listing terminal - what do you see?  A second message?
+1. Watch the listening terminal - what do you see?  A second message?
 
 Sending the same message each time is kind of boring. This time:
 
-1. Where is the message defined? How can you change it?
 1. Modify emit_message.py to emit a different message. 
 1. Execute the updated emit_message.py. 
 1. Watch what happens in the listening terminal.
+
+[mutiple_terminals](screenshot.png)
 
 Repeat this process several times - emit at least 4 different messages.
 Don't worry - it's just code. We can always revert back (try the 'undo' command in VS Code) to a version that works. You can't hurt anything.
@@ -143,20 +157,17 @@ Now look at the second version of each file.
 These include more graceful error handling,
 and a consistent, reusable approach to building code.
 
-Each of the version 2 programs include an error as well. 
 
-1. Find the error and fix it. 
 1. Compare the structure of the version 2 files. 
 1. Modify the docstrings on all your files.
 1. Include your name and the date.
 1. Imports always go at the top, just after the file docstring.
-1. Imports should be one per line - why?
+1. Imports should be one per line
 1. Then, define your functions.
 1. Functions are reusable logic blocks.
 1. Everything the function needs comes in through the arguments.
 1. A function may - or may not - return a value. 
 1. When we open a connection, we should close the connection. 
-1. Which of the 4 files will always close() the connection?
 1. Search GitHub for if __name__ == "__main__":
 1. How many hits did you get? 
 1. Learn and understand this common Python idiom.
